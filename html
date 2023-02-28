@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BMI線上計算</title>
+    <style>
+        .title {
+            margin: 20px auto;
+            text-align: center;
+            font-family: Calibri;
+            font-size: xx-large;
+            font-weight: bolder;
+            color: blueviolet;
+        }
+
+        .item {
+            margin: 20px auto;
+            text-align: center;
+            font-size: large;
+            color: darkblue;
+        }
+
+        .text {
+            margin: 20px auto;
+            text-align: center;
+            border-radius: 10px;
+            border: groove;
+        }
+
+        .flex-container {
+            display: block;
+            width: auto;
+            margin: 10px auto;
+        }
+    </style>
+
+</head>
+<body style="background-color:#f8f7e1;">
+    
+    <div style:"align-content:center;">
+       
+        <div><h1 class="title flex-container">BMI線上計算</h1></div>
+        <div style="border: 1px red solid; width: 250px; border-radius: 3px; margin: 30px auto; padding:10px;">
+            <label class="item">身高：(/m)    </label>
+            <input class="text" type="text" placeholder="0.00"  id="h" style="margin-left: 50px; height: 50px; background-color: #fedfd3;">
+            <p></p>
+            <label class="item">體重：(/kg)    </label>
+            <input class="text" type="text"  placeholder="00.00" id="w" style="margin-left: 50px; height: 50px; background-color: #fedfd3;">
+        </div>
+
+        <div>
+            <input class="flex-container"  type="button" value="馬上計算" onclick="cal();" style=" height:40px; width:100px;" />
+        </div>
+    </div>
+       
+    <script>
+        
+        function cal() {
+            let h = document.getElementById("h");
+            let w = document.getElementById("w");
+            let bmi =parseFloat(w.value) / (parseFloat(h.value) * parseFloat(h.value));  //JS內建的轉型parseInt、parseFloat
+            let result=bmi.toFixed(2);
+            alert("噹噹!，您的bmi=" + result);
+        }
+      
+
+    </script>
+</body>
+</html>
